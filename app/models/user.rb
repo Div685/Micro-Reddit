@@ -7,7 +7,8 @@ class EmailValidator < ActiveModel::EachValidator
 end
 
 class User < ApplicationRecord
-  has_many :posts
+	has_many :posts
+	has_many :comments
 
   validates  :username, :email, presence: true, uniqueness: true
   validates  :username, length: { minimum: 3, maximum: 16 }
